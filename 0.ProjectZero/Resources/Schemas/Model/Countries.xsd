@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:Countries="http://www.tibco.com/schemas/0.ProjectZero/Resources/Schemas/Model/Countries"
+     xmlns:Country="http://www.tibco.com/schemas/0.ProjectZero/Resources/Schemas/Model/Country"
+	 targetNamespace="http://www.tibco.com/schemas/0.ProjectZero/Resources/Schemas/Model/Countries"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+    <xs:import namespace="http://www.tibco.com/schemas/0.ProjectZero/Resources/Schemas/Model/Country" schemaLocation="Country"/>
+	<xs:element name="Countries">
+		<xs:complexType/>
+	</xs:element>
+</xs:schema>
