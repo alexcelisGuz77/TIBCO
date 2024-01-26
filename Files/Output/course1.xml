@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<ns0:Course xmlns:ns0="http://www.tibco.com/schemas/2.ParseRenderXML/Resources/Schemas/Model/Course">
+    <ns0:Id>1</ns0:Id>
+    <ns0:Author>Nelson dias</ns0:Author>
+    <ns0:Title>Learn Mulesoft: 12 steps to master the development of APIs!</ns0:Title>
+    <ns0:Genre>Services Integration</ns0:Genre>
+    <ns0:Price>9.99</ns0:Price>
+    <ns0:PublishData>2020-10-01</ns0:PublishData>
+</ns0:Course>
