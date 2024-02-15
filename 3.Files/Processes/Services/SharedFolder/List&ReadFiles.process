@@ -35,15 +35,15 @@
     <pd:activity name="List Files">
         <pd:type>com.tibco.plugin.file.ListFilesActivity</pd:type>
         <pd:resourceType>ae.activities.ListFilesActivity</pd:resourceType>
-        <pd:x>154</pd:x>
-        <pd:y>362</pd:y>
+        <pd:x>153</pd:x>
+        <pd:y>363</pd:y>
         <config>
             <mode>only-files</mode>
         </config>
         <pd:inputBindings>
             <ns2:ListFilesActivityConfig>
                 <fileName>
-                    <xsl:value-of select="concat($Start/pfx:ListReadFilesRequest/pfx:Body/pfx:sourcePath,$Start/pfx:ListReadFilesRequest/pfx:Body/pfx:sourceFilePattern)"/>
+                    <xsl:value-of select="concat($Start/pfx:ListReadFilesRequest/pfx:Body/pfx:source/pfx:sourcePath, $Start/pfx:ListReadFilesRequest/pfx:Body/pfx:source/pfx:sourceFilePattern)"/>
                 </fileName>
             </ns2:ListFilesActivityConfig>
         </pd:inputBindings>
@@ -51,7 +51,7 @@
     <pd:activity name="Map .txt files">
         <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
         <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
-        <pd:x>249</pd:x>
+        <pd:x>256</pd:x>
         <pd:y>364</pd:y>
         <config>
             <element>
@@ -198,7 +198,7 @@
                     <ns1:Body>
                         <ns1:source>
                             <ns1:sourceDirectoryPath>
-                                <xsl:value-of select="'C:\Users\Israel\Documents\GitHub\TIBCO\Files\Input\'"/>
+                                <xsl:value-of select="$Start/pfx:ListReadFilesRequest/pfx:Body/pfx:source/pfx:sourcePath"/>
                             </ns1:sourceDirectoryPath>
                             <ns1:sourceFileName>
                                 <xsl:value-of select="$currentFile/fileInfo/fileName"/>
@@ -206,10 +206,10 @@
                         </ns1:source>
                         <ns1:target>
                             <ns1:targetDirectoryPath>
-                                <xsl:value-of select="'C:\Users\Israel\Documents\GitHub\TIBCO\Files\Output\'"/>
+                                <xsl:value-of select="$Start/pfx:ListReadFilesRequest/pfx:Body/pfx:target/pfx:targetPath"/>
                             </ns1:targetDirectoryPath>
                             <ns1:targetFileName>
-                                <xsl:value-of select="concat('1', $currentFile/fileInfo/fileName)"/>
+                                <xsl:value-of select="concat('Final_', $currentFile/fileInfo/fileName)"/>
                             </ns1:targetFileName>
                         </ns1:target>
                     </ns1:Body>
@@ -219,7 +219,7 @@
         <pd:activity name="MoveFiles">
             <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
             <pd:resourceType>ae.process.subprocess</pd:resourceType>
-            <pd:x>640</pd:x>
+            <pd:x>642</pd:x>
             <pd:y>364</pd:y>
             <config>
                 <processName>/Processes/Services/SharedFolder/MoveFiles.process</processName>
@@ -230,7 +230,7 @@
                     <ns12:Body>
                         <ns12:source>
                             <ns12:sourceDirectoryPath>
-                                <xsl:value-of select="'C:\Users\Israel\Documents\GitHub\TIBCO\Files\Input\'"/>
+                                <xsl:value-of select="$Start/pfx:ListReadFilesRequest/pfx:Body/pfx:source/pfx:sourcePath"/>
                             </ns12:sourceDirectoryPath>
                             <ns12:sourceFileName>
                                 <xsl:value-of select="$currentFile/fileInfo/fileName"/>
@@ -238,7 +238,7 @@
                         </ns12:source>
                         <ns12:target>
                             <ns12:targetDirectoryPath>
-                                <xsl:value-of select="'C:\Users\Israel\Documents\GitHub\TIBCO\Files\Output\'"/>
+                                <xsl:value-of select="$Start/pfx:ListReadFilesRequest/pfx:Body/pfx:target/pfx:targetPath"/>
                             </ns12:targetDirectoryPath>
                             <ns12:targetFileName>
                                 <xsl:value-of select="$currentFile/fileInfo/fileName"/>
@@ -270,7 +270,7 @@
                     <ns4:Body>
                         <ns4:source>
                             <ns4:sourceDirectoryPath>
-                                <xsl:value-of select="'C:\Users\Israel\Documents\GitHub\TIBCO\Files\Input\'"/>
+                                <xsl:value-of select="$Start/pfx:ListReadFilesRequest/pfx:Body/pfx:source/pfx:sourcePath"/>
                             </ns4:sourceDirectoryPath>
                             <ns4:sourceFileName>
                                 <xsl:value-of select="$currentFile/fileInfo/fileName"/>

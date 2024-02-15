@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataDefinition>
+    <Element>
+        <source>
+            <sourcePath>C:\Users\Israel\Documents\GitHub\TIBCO\Files\Input\Germany\</sourcePath>
+            <sourceFilePattern>*</sourceFilePattern>
+        </source>
+        <target>
+            <targetPath>C:\Users\Israel\Documents\GitHub\TIBCO\Files\Output\Germany\</targetPath>
+        </target>
+        <messageSelector>GER</messageSelector>
+    </Element>
+    <Element>
+        <source>
+            <sourcePath>C:\Users\Israel\Documents\GitHub\TIBCO\Files\Input\Portugal\</sourcePath>
+            <sourceFilePattern>*</sourceFilePattern>
+        </source>
+        <target>
+            <targetPath>C:\Users\Israel\Documents\GitHub\TIBCO\Files\Output\Portugal\</targetPath>
+        </target>
+        <messageSelector>PT</messageSelector>
+    </Element>
+    <Element>
+        <source>
+            <sourcePath>C:\Users\Israel\Documents\GitHub\TIBCO\Files\Input\Spain\</sourcePath>
+            <sourceFilePattern>*</sourceFilePattern>
+        </source>
+        <target>
+            <targetPath>C:\Users\Israel\Documents\GitHub\TIBCO\Files\Output\Spain\</targetPath>
+        </target>
+        <messageSelector>SP</messageSelector>
+    </Element>
+</DataDefinition>

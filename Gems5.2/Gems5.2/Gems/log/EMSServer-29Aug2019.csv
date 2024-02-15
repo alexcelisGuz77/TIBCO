@@ -1,0 +1,10 @@
+timestamp,pendingMessageSize,inboundMessageRate,outboundMessageCount,outboundMessageRate,inboundMessageCount,connectionCount,pendingMessageCount,largeDestCount,consumerCount,topicCount,producerCount,queueCount,syncDBSize,durableCount,diskReadRate,asyncDBSize,msgMem,diskWriteRate,sessionCount,routeRecoverCount,diskWriteOperationsRate,diskReadOperationsRate,adminConnectionCount,outboundBytesRate,clientConnectionCount,inboundBytesRate,msgMemPooled,RespTime
+Thu Aug 29 17:56:28 709 BST 2019,0,1,175,1,176,3,0,0,4,7,2,9,2048,0,0,3072,22190,0,3,0,0,0,-1,3920,-1,420,53248,5
+Thu Aug 29 17:56:58 721 BST 2019,0,0,184,0,185,1,0,0,1,7,1,8,2048,0,0,3072,13027,0,1,0,0,0,-1,125,-1,188,53248,1
+Thu Aug 29 17:57:28 734 BST 2019,0,0,188,0,189,1,0,0,1,5,1,8,2048,0,0,3072,13027,0,1,0,0,0,-1,0,-1,0,53248,1
+Thu Aug 29 17:57:58 743 BST 2019,0,0,191,0,192,1,0,0,1,5,1,8,2048,0,0,3072,13027,0,1,0,0,0,-1,0,-1,0,53248,3
+Thu Aug 29 17:58:28 747 BST 2019,0,0,194,0,195,1,0,0,1,5,1,8,2048,0,0,3072,13027,0,1,0,0,0,-1,0,-1,0,53248,2
+Thu Aug 29 17:58:58 770 BST 2019,0,0,197,0,198,1,0,0,1,5,1,8,2048,0,0,3072,13027,0,1,0,0,0,-1,0,-1,0,53248,1
+Thu Aug 29 17:59:28 776 BST 2019,0,0,200,0,201,1,0,0,1,5,1,8,2048,0,0,3072,13027,0,1,0,0,0,-1,0,-1,0,53248,2
+Thu Aug 29 17:59:58 783 BST 2019,0,0,203,0,204,1,0,0,1,5,1,8,2048,0,0,3072,13027,0,1,0,0,0,-1,0,-1,0,53248,2
+Thu Aug 29 18:00:28 789 BST 2019,0,0,206,0,207,1,0,0,1,5,1,8,2048,0,0,3072,13027,0,1,0,0,0,-1,0,-1,0,53248,1

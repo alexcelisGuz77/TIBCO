@@ -16,7 +16,7 @@
                         <xsl:value-of select="&quot;;DFLVK&quot;"/>
                     </ns4:message>
                     <ns4:responseStatus>
-                        <xsl:value-of select="$Start/pfx:MoveFileRequest/pfx:Body/pfx:source/pfx:sourceFileName"/>
+                        <xsl:value-of select="'SUCCESS'"/>
                     </ns4:responseStatus>
                 </ns4:Response>
             </pfx2:Body>

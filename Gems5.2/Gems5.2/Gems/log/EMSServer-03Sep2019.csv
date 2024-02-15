@@ -1,0 +1,2 @@
+timestamp,durableCount,diskReadRate,msgMem,sessionCount,syncDBSize,asyncDBSize,diskWriteRate,topicCount,consumerCount,producerCount,queueCount,pendingMessageCount,largeDestCount,connectionCount,inboundMessageCount,pendingMessageSize,outboundMessageRate,outboundMessageCount,inboundMessageRate,msgMemPooled,inboundBytesRate,outboundBytesRate,diskReadOperationsRate,diskWriteOperationsRate,adminConnectionCount,clientConnectionCount,routeRecoverCount,RespTime
+Tue Sep 03 09:20:23 642 BST 2019,0,0,12864,1,1536,4608,0,5,1,1,9,0,0,1,3215,0,0,3214,0,53248,0,0,0,0,-1,-1,0,4

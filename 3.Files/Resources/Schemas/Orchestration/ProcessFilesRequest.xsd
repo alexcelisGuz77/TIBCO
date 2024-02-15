@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	 xmlns:ListReadFilesRequest="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/ListReadFilesRequest"
+	 xmlns:ProcessFilesRequest="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Orchestration/ProcessFilesRequest"
 	 xmlns:Header="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Cajero/Header"
-	 targetNamespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/ListReadFilesRequest"
+	 targetNamespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Orchestration/ProcessFilesRequest"
 	 elementFormDefault="qualified"
 	 attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Cajero/Header" schemaLocation="../Commons/Header.xsd"/>
-	<xs:element name="ListReadFilesRequest">
+	<xs:element name="ProcessFilesRequest">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="Header:Header"/>
-				<xs:element ref="ListReadFilesRequest:Body"/>
+				<xs:element ref="ProcessFilesRequest:Body"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

@@ -16,7 +16,7 @@
                         <xsl:value-of select="&quot;LASKJ&quot;"/>
                     </ns5:message>
                     <ns5:responseStatus>
-                        <xsl:value-of select="$Start/pfx:RemoveFilesRequest/pfx:Body/pfx:source/pfx:sourceFileName"/>
+                        <xsl:value-of select="'SUCCESS'"/>
                     </ns5:responseStatus>
                 </ns5:Response>
             </pfx2:Body>
@@ -32,8 +32,8 @@
     <pd:group name="Group">
         <pd:type>com.tibco.pe.core.LoopGroup</pd:type>
         <pd:resourceType>ae.process.group</pd:resourceType>
-        <pd:x>167</pd:x>
-        <pd:y>9</pd:y>
+        <pd:x>169</pd:x>
+        <pd:y>10</pd:y>
         <pd:width>293</pd:width>
         <pd:height>287</pd:height>
         <pd:collapsedWidth>57</pd:collapsedWidth>
@@ -44,7 +44,7 @@
             <pd:groupType>errorLoop</pd:groupType>
             <pd:serializable>false</pd:serializable>
             <pd:indexSlot>index</pd:indexSlot>
-            <pd:errorCondition>$index = 3</pd:errorCondition>
+            <pd:errorCondition>$index = 0</pd:errorCondition>
             <pd:suspendAfterErrorRetry>false</pd:suspendAfterErrorRetry>
         </config>
         <pd:inputBindings/>
@@ -80,7 +80,7 @@
         <pd:activity name="Remove File">
             <pd:type>com.tibco.plugin.file.FileRemoveActivity</pd:type>
             <pd:resourceType>ae.activities.FileRemoveActivity</pd:resourceType>
-            <pd:x>263</pd:x>
+            <pd:x>264</pd:x>
             <pd:y>81</pd:y>
             <config/>
             <pd:inputBindings>
@@ -94,7 +94,7 @@
         <pd:activity name="Sleep">
             <pd:type>com.tibco.plugin.timer.SleepActivity</pd:type>
             <pd:resourceType>ae.activities.sleep</pd:resourceType>
-            <pd:x>262</pd:x>
+            <pd:x>263</pd:x>
             <pd:y>211</pd:y>
             <config/>
             <pd:inputBindings>
@@ -108,7 +108,7 @@
         <pd:activity name="Generate Error">
             <pd:type>com.tibco.pe.core.GenerateErrorActivity</pd:type>
             <pd:resourceType>ae.activities.throw</pd:resourceType>
-            <pd:x>383</pd:x>
+            <pd:x>384</pd:x>
             <pd:y>212</pd:y>
             <config>
                 <faultName/>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	 xmlns:ListReadFilesRequest="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/ListReadFilesRequest"
+	 xmlns:MoveUserToTargetFolderRequest="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Orchestration/MoveUserToTargetFolderRequest"
 	 xmlns:Header="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Cajero/Header"
-	 targetNamespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/ListReadFilesRequest"
+	 targetNamespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Orchestration/MoveUserToTargetFolderRequest"
 	 elementFormDefault="qualified"
 	 attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Cajero/Header" schemaLocation="../Commons/Header.xsd"/>
-	<xs:element name="ListReadFilesRequest">
+	<xs:element name="MoveUserToTargetFolderRequest">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="Header:Header"/>
-				<xs:element ref="ListReadFilesRequest:Body"/>
+				<xs:element ref="MoveUserToTargetFolderRequest:Body"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -21,15 +21,16 @@
 				<xs:element name="source">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="sourcePath" type="xs:string"/>
-							<xs:element name="sourceFilePattern" type="xs:string"/>
+							<xs:element name="sourceDirectoryPath" type="xs:string"/>
+							<xs:element name="sourceFileName" type="xs:string"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="target">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="targetPath" type="xs:string"/>
+							<xs:element name="targetDirectoryPath" type="xs:string"/>
+							<xs:element name="targetFileName" type="xs:string"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
