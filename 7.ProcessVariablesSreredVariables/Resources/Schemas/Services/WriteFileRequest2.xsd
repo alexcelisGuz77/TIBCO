@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:WriteFileRequest2="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/WriteFileRequest2"
+	 xmlns:Header="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Cajero/Header"
+	 targetNamespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/WriteFileRequest2"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Cajero/Header" schemaLocation="../Commons/Header.xsd"/>
+	<xs:element name="WriteFileRequest2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Header:Header"/>
+				<xs:element ref="WriteFileRequest2:Body"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Body">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sourcePath" type="xs:string"/>
+				<xs:element name="sourceFileName" type="xs:string"/>
+				<xs:element name="mensajes" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
