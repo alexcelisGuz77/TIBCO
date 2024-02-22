@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pfx="http://www.tibco.com/schemas/0.ProjectZero/Resources/Schemas/Commons/Header" xmlns:pfx2="http://www.tibco.com/schemas/0.ProjectZero/Resources/Schemas/Commons/Context.xsd" xmlns:ns="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/writeFileRequest" xmlns:pfx3="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/WriteFileResponse" xmlns:pfx4="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Context.xsd" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns2="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Cajero/Header" xmlns:ns1="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/GetCountriesResponse" xmlns:ns4="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/GetCountriesByIdRequest" xmlns:ns3="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/GetCountriesRequest" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns6="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/Schema.xsd" xmlns:ns5="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Response" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/writeFileRequest" schemaLocation="/Resources/Schemas/Services/writeFileRequest.xsd"/>
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/WriteFileResponse" schemaLocation="/Resources/Schemas/Services/WriteFileResponse.xsd"/>
+    <pd:name>Test/TestGetCountriesByID.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>44</pd:startX>
+    <pd:startY>95</pd:startY>
+    <pd:returnBindings>
+        <pfx3:WriteFileResponse>
+            <ns2:Header>
+                <xsl:copy-of select="$GetCountriesById/ns6:GetCountriesByIdResponse/ns2:Header/pfx4:Context"/>
+                <ns2:timestamp>
+                    <xsl:value-of select="$GetCountriesById/ns6:GetCountriesByIdResponse/ns2:Header/ns2:timestamp"/>
+                </ns2:timestamp>
+            </ns2:Header>
+            <pfx3:Body>
+                <xsl:copy-of select="$GetCountriesById/ns6:GetCountriesByIdResponse/ns6:Body/ns5:Response"/>
+            </pfx3:Body>
+        </pfx3:WriteFileResponse>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType ref="pfx3:WriteFileResponse"/>
+    <pd:endX>305</pd:endX>
+    <pd:endY>96</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1707236256454</pd:targetNamespace>
+    <pd:activity name="GetCountriesById">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>160</pd:x>
+        <pd:y>95</pd:y>
+        <config>
+            <processName>/Processes/Services/DataBase/GetCountriesById.process</processName>
+        </config>
+        <pd:inputBindings>
+            <ns4:GetCountriesByIdRequest>
+                <ns2:Header>
+                    <pfx4:Context>
+                        <pfx4:correlationId>
+                            <xsl:value-of select="'123654'"/>
+                        </pfx4:correlationId>
+                    </pfx4:Context>
+                    <ns2:timestamp>
+                        <xsl:value-of select="current-dateTime()"/>
+                    </ns2:timestamp>
+                </ns2:Header>
+                <ns4:Body>
+                    <ns4:method>
+                        <xsl:value-of select="''"/>
+                    </ns4:method>
+                    <ns4:queryParam>
+                        <xsl:value-of select="'PT'"/>
+                    </ns4:queryParam>
+                </ns4:Body>
+            </ns4:GetCountriesByIdRequest>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>GetCountriesById</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>GetCountriesById</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

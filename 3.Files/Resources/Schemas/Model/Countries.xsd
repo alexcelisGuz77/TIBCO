@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	 xmlns:Countries="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Model/Countries"
 	 xmlns:Country="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Model/Country"
+	 xmlns:Countries="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Model/Countries"
 	 targetNamespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Model/Countries"
 	 elementFormDefault="qualified"
 	 attributeFormDefault="unqualified">

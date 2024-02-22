@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://www.tibco.com/schemas/0.ProjectZero/Resources/Schemas/Commons/Header" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://www.tibco.com/schemas/0.ProjectZero/Resources/Schemas/Commons/Context.xsd" xmlns:ns="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/writeFileRequest" xmlns:pfx3="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/WriteFileResponse" xmlns:pfx4="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Context.xsd" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns2="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Commons/Cajero/Header" xmlns:ns1="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/GetCountriesResponse" xmlns:ns3="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/GetCountriesRequest">
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/writeFileRequest" schemaLocation="/Resources/Schemas/Services/writeFileRequest.xsd"/>
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Services/WriteFileResponse" schemaLocation="/Resources/Schemas/Services/WriteFileResponse.xsd"/>
+    <pd:name>Test/TestGetCountries.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>45</pd:startX>
+    <pd:startY>44</pd:startY>
+    <pd:returnBindings>
+        <pfx3:WriteFileResponse>
+            <xsl:copy-of select="$GetCountries/ns1:GetCountriesResponse/ns2:Header"/>
+            <pfx3:Body>
+                <xsl:copy-of select="$GetCountries/ns1:GetCountriesResponse/ns1:Body/ancestor-or-self::*/namespace::node()"/>
+                <xsl:copy-of select="$GetCountries/ns1:GetCountriesResponse/ns1:Body/@*"/>
+                <xsl:copy-of select="$GetCountries/ns1:GetCountriesResponse/ns1:Body/node()"/>
+            </pfx3:Body>
+        </pfx3:WriteFileResponse>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType ref="pfx3:WriteFileResponse"/>
+    <pd:endX>300</pd:endX>
+    <pd:endY>43</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1707236256454</pd:targetNamespace>
+    <pd:activity name="GetCountries">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>154</pd:x>
+        <pd:y>46</pd:y>
+        <config>
+            <processName>/Processes/Services/DataBase/GetCountries.process</processName>
+        </config>
+        <pd:inputBindings>
+            <ns3:GetCountriesRequest>
+                <ns2:Header>
+                    <pfx4:Context>
+                        <pfx4:correlationId>
+                            <xsl:value-of select="'123654'"/>
+                        </pfx4:correlationId>
+                    </pfx4:Context>
+                    <ns2:timestamp>
+                        <xsl:value-of select="current-dateTime()"/>
+                    </ns2:timestamp>
+                </ns2:Header>
+                <ns3:Body>
+                    <ns3:queryParam>
+                        <xsl:value-of select="''"/>
+                    </ns3:queryParam>
+                </ns3:Body>
+            </ns3:GetCountriesRequest>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>GetCountries</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>GetCountries</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>
