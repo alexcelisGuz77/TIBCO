@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:Cliente="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Model/Cajero/Cliente"
+	 targetNamespace="http://www.tibco.com/schemas/3.Files/Resources/Schemas/Model/Cajero/Cliente"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Cliente">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NumeroCuenta" type="xs:string"/>
+				<xs:element name="nombreCliente" type="xs:string"/>
+				<xs:element name="saldo" type="xs:string"/>
+				<xs:element name="clienteId" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
